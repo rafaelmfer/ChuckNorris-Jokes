@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Pulsus Challenge</string>
+    <string name="app_name">Chuck Norris\' Jokes</string>
+
+    <string name="random_joke">Random Joke</string>
+    <string name="random_joke_description">Retrieve a random chuck norris\' joke</string>
+    <string name="random_joke_by_one_category">Random Joke by one category</string>
+    <string name="random_joke_by_category_description">Retrieve a random chuck norris\' joke from a given category.</string>
+    <string name="search_jokes_by_text">Search Jokes by text</string>
+    <string name="search_jokes_by_text_description">Retrieve a list of chuck norris\' jokes from a given text.</string>
+    <string name="day_night">Day/Night</string>
 </resources>
