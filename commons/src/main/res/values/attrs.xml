@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Toolbars -->
+    <declare-styleable name="GenericToolbar">
+        <attr name="toolbarText" format="string" />
+        <attr name="toolbarTextColor" format="color" />
+        <attr name="android:textSize" format="dimension" />
+        <attr name="buttonLeftTextColor" format="color" />
+        <attr name="buttonRightTextColor" format="color" />
+        <attr name="showTitle" format="boolean" />
+        <attr name="showRightButton" format="boolean" />
+        <attr name="showLeftButton" format="boolean" />
+    </declare-styleable>
+</resources>

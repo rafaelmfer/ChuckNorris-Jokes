@@ -1,5 +1,6 @@
 package mobi.pulsus.challenge.commons.extensions
 
+import android.app.Activity
 import android.os.SystemClock
 import android.view.View
 import kotlinx.coroutines.CoroutineScope
@@ -46,3 +47,5 @@ val View.gone: View
         visibility = View.GONE
         return this
     }
+
+fun View.configureBackButtonAction(activity: Activity) = setOnClickListener { activity.onBackPressed() }
