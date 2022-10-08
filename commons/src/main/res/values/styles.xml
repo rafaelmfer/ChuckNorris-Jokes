@@ -107,17 +107,9 @@
         <item name="rippleColor">@color/orange_light</item>
     </style>
 
-    <style name="Button.Material.TextBorder" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="android:textSize">14sp</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:lineSpacingExtra">2sp</item>
-        <item name="cornerRadius">@dimen/default_radius</item>
-        <item name="strokeColor">@color/orange</item>
-        <item name="android:insetTop">0dp</item>
-        <item name="android:insetBottom">0dp</item>
-        <item name="android:textColor">@color/orange</item>
-        <item name="rippleColor">@color/orange_light</item>
+    <style name="Button.Material.Text.Outlined" parent="Button.Material.Text">
+        <item name="strokeColor">@color/color_button_material_text</item>
+        <item name="strokeWidth">1dp</item>
     </style>
 
     <style name="Button.IconOnly.Circle" parent="Button.IconOnly">
@@ -136,11 +128,6 @@
         <item name="android:minWidth">48dp</item>
         <item name="android:minHeight">48dp</item>
         <item name="rippleColor">@color/orange_light</item>
-    </style>
-
-    <style name="Material.Button.Text.Outlined" parent="Button.Material.Text">
-        <item name="strokeColor">@color/color_button_material_text</item>
-        <item name="strokeWidth">1dp</item>
     </style>
     <!-- endregion    -->
 </resources>

@@ -1,6 +1,7 @@
 package mobi.pulsus.challenge
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Toast
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import mobi.pulsus.challenge.commons.extensions.onSingleClick
 import mobi.pulsus.challenge.commons.extensions.viewBinding
 import mobi.pulsus.challenge.databinding.ActivityMainBinding
+import mobi.pulsus.challenge.randomjoke.ui.RandomJokeActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         mcvHomeRandomJoke.onSingleClick {
-            showToast("Random Joke")
+            startActivity(Intent(this@MainActivity, RandomJokeActivity::class.java))
         }
 
         mcvHomeRandomJokeByCategory.onSingleClick {
