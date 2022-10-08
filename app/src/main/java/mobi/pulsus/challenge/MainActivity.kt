@@ -11,6 +11,7 @@ import mobi.pulsus.challenge.commons.extensions.onSingleClick
 import mobi.pulsus.challenge.commons.extensions.viewBinding
 import mobi.pulsus.challenge.databinding.ActivityMainBinding
 import mobi.pulsus.challenge.randomjoke.ui.RandomJokeActivity
+import mobi.pulsus.challenge.randomjokebycategory.ui.RandomJokeCategoryActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         mcvHomeRandomJokeByCategory.onSingleClick {
-            showToast("Random Joke By Category")
+            startActivity(Intent(this@MainActivity, RandomJokeCategoryActivity::class.java))
         }
 
         mcvHomeSearchJokes.onSingleClick {
