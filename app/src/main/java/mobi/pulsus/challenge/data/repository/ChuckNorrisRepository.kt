@@ -25,4 +25,13 @@ class ChuckNorrisRepository(
             throw Exception()
         }
     }
+
+    override suspend fun getCategories(): List<String> {
+        val call = chuckNorrisWebService.getCategories()
+        return if (call.isSuccessful) {
+            call.body() ?: throw Exception()
+        } else {
+            throw Exception()
+        }
+    }
 }

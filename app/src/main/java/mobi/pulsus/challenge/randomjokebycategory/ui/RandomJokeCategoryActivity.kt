@@ -14,11 +14,11 @@ class RandomJokeCategoryActivity : AppCompatActivity() {
     private val binding by viewBinding(ActivityRandomJokeCategoryBinding::inflate)
 
     private val categoryAdapter = CategoryAdapter()
-    private val list = listOf("animal", "career", "celebrity", "dev", "explicit", "fashion", "food", "history", "money", "movie", "music", "political", "religion", "science", "sport", "travel")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        binding.onViewCreated()
         binding.gtRandomJokeByCategory.setLeftButtonText("<--")
 
         categoryAdapter.setList(list)
