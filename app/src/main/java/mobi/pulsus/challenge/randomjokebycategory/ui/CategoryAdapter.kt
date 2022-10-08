@@ -29,7 +29,7 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
         fun bind(categoryName: String) {
             val categoryCapitalized = categoryName.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
             binding.tvCategory.text = categoryCapitalized
-            binding.root.onSingleClick {
+            binding.mcvCategory.onSingleClick {
                 categoryAction.invoke(categoryCapitalized)
             }
         }

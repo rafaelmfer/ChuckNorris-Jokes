@@ -34,4 +34,22 @@ class ChuckNorrisRepository(
             throw Exception()
         }
     }
+
+    override suspend fun getRandomJokeFromCategory(categoryName: String): JokeModel {
+        val call = chuckNorrisWebService.getRandomJokeFromCategory(categoryName)
+        return if (call.isSuccessful) {
+            call.body()?.let {
+                JokeModel(
+                    categories = it.categories,
+                    createdAt = it.createdAt,
+                    iconUrl = it.iconUrl,
+                    id = it.id,
+                    url = it.url,
+                    value = it.value
+                )
+            } ?: throw Exception()
+        } else {
+            throw Exception()
+        }
+    }
 }
