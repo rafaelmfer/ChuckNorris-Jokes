@@ -8,7 +8,6 @@ import mobi.pulsus.challenge.commons.extensions.notAllowWhitespace
 import mobi.pulsus.challenge.commons.extensions.viewBinding
 import mobi.pulsus.challenge.commons.extensions.visible
 import mobi.pulsus.challenge.databinding.ActivitySearchJokesBinding
-import mobi.pulsus.challenge.domain.model.SearchJokeModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchJokesActivity : AppCompatActivity() {
@@ -31,17 +30,37 @@ class SearchJokesActivity : AppCompatActivity() {
     }
 
     private fun ActivitySearchJokesBinding.observables() {
-        viewModel.searchJokesLiveData.observe(this@SearchJokesActivity) { jokes ->
-            setupJokesRecycler(jokes)
+        viewModel.run {
+            searchJokesLiveData.observe(this@SearchJokesActivity) {
+                handlerUIState(it)
+            }
         }
     }
 
-    private fun ActivitySearchJokesBinding.setupJokesRecycler(state: SearchJokeModel) {
-        jokeAdapter.updateJokeList(state.result)
-        groupSearchJokesStartInstructions.gone
-        rvSearchJokes.apply {
-            adapter = jokeAdapter
-            visible
+    private fun ActivitySearchJokesBinding.handlerUIState(state: SearchJokeUIState) {
+        when (state) {
+            is SearchJokeUIState.Loading -> {
+                pbSearchJokes.visible
+                groupSearchJokesStartInstructions.gone
+                rvSearchJokes.gone
+                tvSearchJokesErrorText.gone
+            }
+            is SearchJokeUIState.Success -> {
+                pbSearchJokes.gone
+                tvSearchJokesErrorText.gone
+                jokeAdapter.updateJokeList(state.jokes)
+                groupSearchJokesStartInstructions.gone
+                rvSearchJokes.apply {
+                    adapter = jokeAdapter
+                    visible
+                }
+            }
+            is SearchJokeUIState.Error -> {
+                pbSearchJokes.gone
+                rvSearchJokes.gone
+                groupSearchJokesStartInstructions.gone
+                tvSearchJokesErrorText.visible
+            }
         }
     }
 

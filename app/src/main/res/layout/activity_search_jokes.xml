@@ -77,8 +77,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/til_search_box"
-        tools:visibility="visible" />
+        app:layout_constraintTop_toBottomOf="@id/til_search_box" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_search_jokes"
@@ -95,5 +94,32 @@
         app:layout_constraintTop_toBottomOf="@id/til_search_box"
         app:layout_constraintVertical_bias="0"
         tools:listitem="@layout/item_joke" />
+
+    <ProgressBar
+        android:id="@+id/pb_search_jokes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/orange"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_search_jokes_error_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin_horizontal"
+        android:layout_marginEnd="@dimen/screen_margin_horizontal"
+        android:gravity="center"
+        android:text="An error occurred. Try again later"
+        android:textColor="@color/orange"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/til_search_box"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
