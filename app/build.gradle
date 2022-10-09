@@ -53,7 +53,7 @@ dependencies {
 
     implementation "com.google.code.gson:gson:2.9.0"
 
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation "androidx.multidex:multidex:2.0.1"
 
     // Retrofit
     def retrofit_version = "2.9.0"
@@ -72,6 +72,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
 
+    // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
 
