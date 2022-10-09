@@ -37,8 +37,29 @@ class RandomJokeActivity : AppCompatActivity() {
     }
 
     private fun ActivityRandomJokeBinding.observables() {
-        viewModel.randomJokeLiveData.observe(this@RandomJokeActivity) { joke ->
-            bindJokeInformation(joke)
+        viewModel.randomJokeLiveData.observe(this@RandomJokeActivity) {
+            handlerRandomJokeUIState(it)
+        }
+    }
+
+    private fun ActivityRandomJokeBinding.handlerRandomJokeUIState(state: RandomJokeUIState) {
+        when (state) {
+            is RandomJokeUIState.Loading -> {
+                pbRandomJokeCategory.visible
+                groupRandomJokeTextsButtons.gone
+                tvRandomJokeCategoryErrorText.gone
+            }
+            is RandomJokeUIState.Success -> {
+                pbRandomJokeCategory.gone
+                bindJokeInformation(state.joke)
+                groupRandomJokeTextsButtons.visible
+                tvRandomJokeCategoryErrorText.gone
+            }
+            is RandomJokeUIState.Error -> {
+                pbRandomJokeCategory.gone
+                groupRandomJokeTextsButtons.gone
+                tvRandomJokeCategoryErrorText.visible
+            }
         }
     }
 
@@ -60,7 +81,7 @@ class RandomJokeActivity : AppCompatActivity() {
             .error(R.drawable.ic_image_broken)
             .into(ivRandomJokeImage)
 
-        tvRandomJokeCategory.text = if (joke.categories.isEmpty()) "Uncategorized" else joke.categories.joinToString()
+        tvRandomJokeCategory.text = if (joke.categories.isEmpty()) getString(R.string.uncategorized) else joke.categories.joinToString()
         tvRandomJokeCreation.text = joke.createdAt
         tvRandomJokeText.text = joke.value
     }

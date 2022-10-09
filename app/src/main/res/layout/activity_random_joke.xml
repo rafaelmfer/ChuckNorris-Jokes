@@ -59,6 +59,13 @@
                 app:layout_constraintTop_toBottomOf="@id/iv_random_joke_image"
                 tools:visibility="visible" />
 
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_random_joke_texts_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="tv_random_joke_category, tv_random_joke_creation,
+                tv_random_joke_text, mbt_random_joke_new_joke, mbt_random_joke_share"/>
+
             <TextView
                 android:id="@+id/tv_random_joke_category"
                 style="@style/Body"
@@ -125,7 +132,36 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <ProgressBar
+                android:id="@+id/pb_random_joke_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/orange"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_random_joke_image_error_message"
+                app:layout_constraintVertical_bias="0.15" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_random_joke_category_error_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin_horizontal"
+        android:layout_marginEnd="@dimen/screen_margin_horizontal"
+        android:gravity="center"
+        android:text="@string/an_error_occurred_try_again_later"
+        android:textColor="@color/orange"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gt_random_joke"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
