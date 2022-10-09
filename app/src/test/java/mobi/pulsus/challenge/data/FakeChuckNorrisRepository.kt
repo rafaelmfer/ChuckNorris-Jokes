@@ -17,7 +17,14 @@ class FakeChuckNorrisRepository : IChuckNorrisRepository {
             value = "This is a test joke"
         )
         val categoriesTest = listOf("animal", "dev", "food")
-
+        val searchJokeTest = SearchJokeModel(
+            total = 3,
+            result = listOf(
+                jokeTest,
+                jokeTest,
+                jokeTest
+            )
+        )
         val emptyJokeTest = JokeModel(
             categories = listOf(),
             createdAt = "",
@@ -25,6 +32,10 @@ class FakeChuckNorrisRepository : IChuckNorrisRepository {
             id = "",
             url = "",
             value = ""
+        )
+        val emptySearch = SearchJokeModel(
+            total = 0,
+            result = listOf()
         )
     }
 
@@ -67,17 +78,10 @@ class FakeChuckNorrisRepository : IChuckNorrisRepository {
             throw Exception()
         }
 
-        if (keyword.length >= 3) {
-            return SearchJokeModel(
-                total = 3,
-                result = listOf(
-                    jokeTest,
-                    jokeTest,
-                    jokeTest
-                )
-            )
+        return if (keyword.length >= 3) {
+            searchJokeTest
         } else {
-            throw Exception()
+            emptySearch
         }
     }
 }
