@@ -93,6 +93,8 @@
                         android:layout_marginStart="@dimen/card_view_inside_margin"
                         android:layout_marginLeft="@dimen/card_view_inside_margin"
                         android:layout_marginTop="8dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginRight="4dp"
                         android:gravity="center"
                         android:textSize="18sp"
                         android:textStyle="italic"
@@ -109,6 +111,16 @@
                         app:icon="@drawable/ic_outline_favorite"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/mbt_mcv_detail_fact_share"
+                        style="@style/Button.IconOnly"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:icon="@drawable/ic_outline_share"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mbt_mcv_detail_fact_favorite"
+                        app:layout_constraintVertical_bias="1" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/mbt_mcv_detail_fact_load_next_fact"
