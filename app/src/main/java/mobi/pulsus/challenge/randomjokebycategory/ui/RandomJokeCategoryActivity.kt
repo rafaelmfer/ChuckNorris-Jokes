@@ -30,14 +30,51 @@ class RandomJokeCategoryActivity : AppCompatActivity() {
 
     private fun ActivityRandomJokeCategoryBinding.observables() {
         viewModel.run {
-            categoriesLiveData.observe(this@RandomJokeCategoryActivity) { categories ->
-                setupCategoriesRecycler(categories)
+            categoriesLiveData.observe(this@RandomJokeCategoryActivity) {
+                handlerUIState(it)
             }
 
             randomJokeByCategoryLiveData.observe(this@RandomJokeCategoryActivity) {
                 handlerJoke(it)
             }
         }
+    }
+
+    private fun ActivityRandomJokeCategoryBinding.handlerUIState(state: RandomJokeCategoryUIState) {
+        when (state) {
+            is RandomJokeCategoryUIState.Loading -> {
+                pbRandomJokeCategory.visible
+                tvRandomJokeByCategoryInstructions.gone
+                mcvDetailFact.gone
+                rvFactCategories.gone
+                tvRandomJokeCategoryErrorText.gone
+            }
+            is RandomJokeCategoryUIState.SuccessCategories -> {
+                pbRandomJokeCategory.gone
+                setupCategoriesRecycler(state.categories)
+                tvRandomJokeByCategoryInstructions.visible
+                tvRandomJokeCategoryErrorText.gone
+            }
+            is RandomJokeCategoryUIState.Error -> {
+                pbRandomJokeCategory.gone
+                tvRandomJokeByCategoryInstructions.gone
+                mcvDetailFact.gone
+                rvFactCategories.gone
+                tvRandomJokeCategoryErrorText.visible
+            }
+        }
+    }
+
+    private fun ActivityRandomJokeCategoryBinding.setupCategoriesRecycler(categories: List<String>) {
+        rvFactCategories.visible
+        categoryAdapter.apply {
+            setList(categories)
+            setCategoryAction {
+                viewModel.getRandomJokeFromOneCategory(it.lowercase())
+                tvMcvDetailFactCategoryName.text = it
+            }
+        }
+        rvFactCategories.adapter = categoryAdapter
     }
 
     private fun ActivityRandomJokeCategoryBinding.handlerJoke(state: JokeModel) {
@@ -49,15 +86,5 @@ class RandomJokeCategoryActivity : AppCompatActivity() {
         mbtMcvDetailFactLoadNextFact.onSingleClick {
             viewModel.getRandomJokeFromOneCategory(state.categories.first())
         }
-    }
-
-    private fun ActivityRandomJokeCategoryBinding.setupCategoriesRecycler(categories: List<String>) {
-        categoryAdapter.setList(categories)
-        categoryAdapter.setCategoryAction {
-            viewModel.getRandomJokeFromOneCategory(it.lowercase())
-            tvMcvDetailFactCategoryName.text = it
-        }
-        rvFactCategories.adapter = categoryAdapter
-        tvRandomJokeByCategoryInstructions.visible
     }
 }

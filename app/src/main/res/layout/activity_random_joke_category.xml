@@ -128,7 +128,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Load Next"
+                        android:text="@string/load_next"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_mcv_detail_fact_content" />
@@ -139,7 +139,7 @@
                         android:layout_height="0dp"
                         android:visibility="gone"
                         app:constraint_referenced_ids="tv_mcv_detail_fact_category_name, tv_mcv_detail_fact_content,
-                mbt_mcv_detail_fact_load_next_fact, mbt_mcv_detail_fact_favorite"
+                mbt_mcv_detail_fact_load_next_fact, mbt_mcv_detail_fact_favorite, mbt_mcv_detail_fact_share"
                         tools:visibility="visible" />
 
                     <ProgressBar
@@ -174,5 +174,33 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/pb_random_joke_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/orange"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_random_joke_category_error_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin_horizontal"
+        android:layout_marginEnd="@dimen/screen_margin_horizontal"
+        android:gravity="center"
+        android:text="@string/an_error_occurred_try_again_later"
+        android:textColor="@color/orange"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gt_random_joke_by_category"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

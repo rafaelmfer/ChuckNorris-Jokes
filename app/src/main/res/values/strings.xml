@@ -7,4 +7,6 @@
     <string name="search_jokes_by_text_description">Retrieve a list of chuck norris\' jokes from a given text.</string>
     <string name="day_night">Day/Night</string>
     <string name="search_keyword">Search keyword</string>
+    <string name="an_error_occurred_try_again_later">An error occurred. Try again later</string>
+    <string name="load_next">Load Next</string>
 </resources>

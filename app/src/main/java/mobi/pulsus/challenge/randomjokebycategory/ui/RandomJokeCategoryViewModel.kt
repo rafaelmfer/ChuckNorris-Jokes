@@ -12,8 +12,8 @@ class RandomJokeCategoryViewModel(
     private val repository: IChuckNorrisRepository
 ) : ViewModel() {
 
-    private val categoriesMutableLiveData = MutableLiveData<List<String>>()
-    val categoriesLiveData: LiveData<List<String>> = categoriesMutableLiveData
+    private val categoriesMutableLiveData = MutableLiveData<RandomJokeCategoryUIState>()
+    val categoriesLiveData: LiveData<RandomJokeCategoryUIState> = categoriesMutableLiveData
 
     private val randomJokeByCategoryMutableLiveData = MutableLiveData<JokeModel>()
     val randomJokeByCategoryLiveData: LiveData<JokeModel> = randomJokeByCategoryMutableLiveData
@@ -23,11 +23,13 @@ class RandomJokeCategoryViewModel(
     }
 
     private fun getCategories() {
+        categoriesMutableLiveData.postValue(RandomJokeCategoryUIState.Loading)
         viewModelScope.launch {
             try {
                 val result = repository.getCategories()
-                categoriesMutableLiveData.postValue(result)
-            } catch (_: Exception) {
+                categoriesMutableLiveData.postValue(RandomJokeCategoryUIState.SuccessCategories(result))
+            } catch (ex: Exception) {
+                categoriesMutableLiveData.postValue(RandomJokeCategoryUIState.Error)
             }
         }
     }
