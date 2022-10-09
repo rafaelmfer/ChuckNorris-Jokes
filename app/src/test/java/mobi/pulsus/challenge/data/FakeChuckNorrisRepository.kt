@@ -17,6 +17,15 @@ class FakeChuckNorrisRepository : IChuckNorrisRepository {
             value = "This is a test joke"
         )
         val categoriesTest = listOf("animal", "dev", "food")
+
+        val emptyJokeTest = JokeModel(
+            categories = listOf(),
+            createdAt = "",
+            iconUrl = "",
+            id = "",
+            url = "",
+            value = ""
+        )
     }
 
     private var shouldReturnError = false
@@ -46,10 +55,10 @@ class FakeChuckNorrisRepository : IChuckNorrisRepository {
             throw Exception()
         }
 
-        if (categoryName == "") {
-            throw Exception()
+        return if (categoryName == "") {
+            emptyJokeTest
         } else {
-            return jokeTest
+            jokeTest
         }
     }
 

@@ -1,5 +1,6 @@
 package mobi.pulsus.challenge.randomjokebycategory.ui
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,7 +23,8 @@ class RandomJokeCategoryViewModel(
         getCategories()
     }
 
-    private fun getCategories() {
+    @VisibleForTesting
+    fun getCategories() {
         categoriesMutableLiveData.postValue(RandomJokeCategoryUIState.Loading)
         viewModelScope.launch {
             try {
