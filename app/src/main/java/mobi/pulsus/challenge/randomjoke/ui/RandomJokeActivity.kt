@@ -11,11 +11,11 @@ import com.bumptech.glide.request.target.Target
 import mobi.pulsus.challenge.R
 import mobi.pulsus.challenge.commons.extensions.gone
 import mobi.pulsus.challenge.commons.extensions.onSingleClick
+import mobi.pulsus.challenge.commons.extensions.share
 import mobi.pulsus.challenge.commons.extensions.viewBinding
 import mobi.pulsus.challenge.commons.extensions.visible
 import mobi.pulsus.challenge.databinding.ActivityRandomJokeBinding
 import mobi.pulsus.challenge.domain.model.JokeModel
-import mobi.pulsus.challenge.showToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RandomJokeActivity : AppCompatActivity() {
@@ -33,7 +33,6 @@ class RandomJokeActivity : AppCompatActivity() {
     private fun ActivityRandomJokeBinding.onViewCreated() {
         observables()
         setupClickNewJoke()
-        setupClickShareJoke()
     }
 
     private fun ActivityRandomJokeBinding.observables() {
@@ -84,6 +83,7 @@ class RandomJokeActivity : AppCompatActivity() {
         tvRandomJokeCategory.text = if (joke.categories.isEmpty()) getString(R.string.uncategorized) else joke.categories.joinToString()
         tvRandomJokeCreation.text = joke.createdAt
         tvRandomJokeText.text = joke.value
+        setupClickShareJoke(joke.value, joke.url)
     }
 
     private fun ActivityRandomJokeBinding.setupClickNewJoke() {
@@ -93,9 +93,9 @@ class RandomJokeActivity : AppCompatActivity() {
         }
     }
 
-    private fun ActivityRandomJokeBinding.setupClickShareJoke() {
+    private fun ActivityRandomJokeBinding.setupClickShareJoke(jokeText: String, url: String) {
         mbtRandomJokeShare.onSingleClick {
-            showToast("Share")
+            share(jokeText, url)
         }
     }
 }

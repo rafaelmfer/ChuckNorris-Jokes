@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import mobi.pulsus.challenge.commons.extensions.gone
 import mobi.pulsus.challenge.commons.extensions.onSingleClick
+import mobi.pulsus.challenge.commons.extensions.share
 import mobi.pulsus.challenge.commons.extensions.viewBinding
 import mobi.pulsus.challenge.commons.extensions.visible
 import mobi.pulsus.challenge.databinding.ActivityRandomJokeCategoryBinding
@@ -77,14 +78,17 @@ class RandomJokeCategoryActivity : AppCompatActivity() {
         rvFactCategories.adapter = categoryAdapter
     }
 
-    private fun ActivityRandomJokeCategoryBinding.handlerJoke(state: JokeModel) {
+    private fun ActivityRandomJokeCategoryBinding.handlerJoke(joke: JokeModel) {
         tvRandomJokeByCategoryInstructions.gone
         pbMcvDetailFact.gone
         mcvDetailFact.visible
         factGroup.visible
-        tvMcvDetailFactContent.text = state.value
+        tvMcvDetailFactContent.text = joke.value
         mbtMcvDetailFactLoadNextFact.onSingleClick {
-            viewModel.getRandomJokeFromOneCategory(state.categories.first())
+            viewModel.getRandomJokeFromOneCategory(joke.categories.first())
+        }
+        mbtMcvDetailFactShare.onSingleClick {
+            share(joke.value, joke.url)
         }
     }
 }

@@ -1,10 +1,8 @@
 package mobi.pulsus.challenge
 
-import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import mobi.pulsus.challenge.commons.extensions.onSingleClick
@@ -48,8 +46,4 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, SearchJokesActivity::class.java))
         }
     }
-}
-
-fun Context.showToast(text: String) {
-    Toast.makeText(this, text, Toast.LENGTH_LONG).show()
 }
