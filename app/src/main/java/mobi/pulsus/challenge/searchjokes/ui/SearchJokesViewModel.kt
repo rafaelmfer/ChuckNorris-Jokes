@@ -11,9 +11,6 @@ class SearchJokesViewModel(
     private val repository: IChuckNorrisRepository
 ) : ViewModel() {
 
-//    private val _showLoading: LiveEvent<Boolean> = LiveEvent()
-//    val showLoading: LiveData<Boolean> get() = _showLoading
-
     private val searchJokesMutableLiveData = MutableLiveData<SearchJokeUIState>()
     val searchJokesLiveData: LiveData<SearchJokeUIState> get() = searchJokesMutableLiveData
 
