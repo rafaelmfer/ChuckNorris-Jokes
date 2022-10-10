@@ -83,6 +83,13 @@ class RandomJokeCategoryActivity : AppCompatActivity() {
         mcvDetailFact.visible
         factGroup.visible
         tvMcvDetailFactContent.text = joke.value
+        mbtMcvDetailFactFavorite.apply {
+            isSelected = joke.isFavorite
+            onSingleClick {
+                it.isSelected = !it.isSelected
+                viewModel.saveOrDeleteJoke(joke)
+            }
+        }
         mbtMcvDetailFactLoadNextFact.onSingleClick {
             viewModel.getRandomJokeFromOneCategory(joke.categories.first())
         }

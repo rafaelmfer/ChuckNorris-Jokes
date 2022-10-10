@@ -1,222 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tv_title_app"
-        style="@style/H1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/screen_margin_horizontal"
-        android:layout_marginLeft="@dimen/screen_margin_horizontal"
-        android:layout_marginTop="@dimen/screen_margin_vertical"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/app_name"
-        app:layout_constraintEnd_toStartOf="@id/mbt_night_mode"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/mbt_night_mode"
-        style="@style/Button.Material.Primary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/screen_margin_vertical"
-        android:layout_marginEnd="@dimen/screen_margin_horizontal"
-        android:layout_marginRight="@dimen/screen_margin_horizontal"
-        android:text="@string/day_night"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_title_app"
+            style="@style/H1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_margin_horizontal"
+            android:layout_marginLeft="@dimen/screen_margin_horizontal"
+            android:layout_marginTop="@dimen/screen_margin_vertical"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/app_name"
+            app:layout_constraintEnd_toStartOf="@id/mbt_night_mode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mcv_home_random_joke"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/screen_margin_horizontal"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="@dimen/screen_margin_horizontal"
-        app:cardCornerRadius="@dimen/default_radius"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title_app"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="1dp">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbt_night_mode"
+            style="@style/Button.Material.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/screen_margin_vertical"
+            android:layout_marginEnd="@dimen/screen_margin_horizontal"
+            android:layout_marginRight="@dimen/screen_margin_horizontal"
+            android:text="@string/day_night"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcv_home_random_joke"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_margin_horizontal"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="@dimen/screen_margin_horizontal"
+            app:cardCornerRadius="@dimen/default_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_app"
+            app:strokeColor="@color/orange"
+            app:strokeWidth="1dp">
 
-            <TextView
-                android:id="@+id/tv_title_mcv_home_random_joke"
-                style="@style/H3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/card_view_inside_margin"
-                android:layout_marginLeft="@dimen/card_view_inside_margin"
-                android:layout_marginTop="@dimen/card_view_inside_margin"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:text="@string/random_joke"
-                app:layout_constraintBottom_toTopOf="@id/tv_title_mcv_home_random_joke"
-                app:layout_constraintEnd_toStartOf="@id/iv_arrow_mcv_home_random_joke"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv_description_mcv_home_random_joke"
-                style="@style/Caption"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/card_view_inside_margin"
-                android:layout_marginLeft="@dimen/card_view_inside_margin"
-                android:layout_marginBottom="@dimen/card_view_inside_margin"
-                android:text="@string/random_joke_description"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/tv_title_mcv_home_random_joke"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_title_mcv_home_random_joke" />
+                <TextView
+                    android:id="@+id/tv_title_mcv_home_random_joke"
+                    style="@style/H3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_view_inside_margin"
+                    android:layout_marginLeft="@dimen/card_view_inside_margin"
+                    android:layout_marginTop="@dimen/card_view_inside_margin"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/random_joke"
+                    app:layout_constraintBottom_toTopOf="@id/tv_title_mcv_home_random_joke"
+                    app:layout_constraintEnd_toStartOf="@id/iv_arrow_mcv_home_random_joke"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/iv_arrow_mcv_home_random_joke"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/card_view_inside_margin"
-                android:layout_marginRight="@dimen/card_view_inside_margin"
-                android:importantForAccessibility="no"
-                android:src="@drawable/ic_outline_arrow_forward"
-                app:layout_constraintBottom_toBottomOf="@id/tv_description_mcv_home_random_joke"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tv_title_mcv_home_random_joke"
-                app:tint="@color/orange" />
+                <TextView
+                    android:id="@+id/tv_description_mcv_home_random_joke"
+                    style="@style/Caption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_view_inside_margin"
+                    android:layout_marginLeft="@dimen/card_view_inside_margin"
+                    android:layout_marginBottom="@dimen/card_view_inside_margin"
+                    android:text="@string/random_joke_description"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/tv_title_mcv_home_random_joke"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_mcv_home_random_joke" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:id="@+id/iv_arrow_mcv_home_random_joke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/card_view_inside_margin"
+                    android:layout_marginRight="@dimen/card_view_inside_margin"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_outline_arrow_forward"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_description_mcv_home_random_joke"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_title_mcv_home_random_joke"
+                    app:tint="@color/orange" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mcv_home_random_joke_by_category"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="@dimen/default_radius"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mcv_home_random_joke"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="1dp">
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcv_home_random_joke_by_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="@dimen/default_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mcv_home_random_joke"
+            app:strokeColor="@color/orange"
+            app:strokeWidth="1dp">
 
-            <TextView
-                android:id="@+id/tv_title_mcv_home_random_joke_by_category"
-                style="@style/H3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/card_view_inside_margin"
-                android:layout_marginTop="@dimen/card_view_inside_margin"
-                android:layout_marginEnd="8dp"
-                android:text="@string/random_joke_by_one_category"
-                app:layout_constraintBottom_toTopOf="@id/tv_title_mcv_home_random_joke_by_category"
-                app:layout_constraintEnd_toStartOf="@id/iv_arrow_mcv_home_random_joke_by_category"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv_description_mcv_home_random_joke_by_category"
-                style="@style/Caption"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/card_view_inside_margin"
-                android:layout_marginBottom="@dimen/card_view_inside_margin"
-                android:text="@string/random_joke_by_category_description"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/tv_title_mcv_home_random_joke_by_category"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_title_mcv_home_random_joke_by_category" />
+                <TextView
+                    android:id="@+id/tv_title_mcv_home_random_joke_by_category"
+                    style="@style/H3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_view_inside_margin"
+                    android:layout_marginTop="@dimen/card_view_inside_margin"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/random_joke_by_one_category"
+                    app:layout_constraintBottom_toTopOf="@id/tv_title_mcv_home_random_joke_by_category"
+                    app:layout_constraintEnd_toStartOf="@id/iv_arrow_mcv_home_random_joke_by_category"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/iv_arrow_mcv_home_random_joke_by_category"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/card_view_inside_margin"
-                android:layout_marginRight="@dimen/card_view_inside_margin"
-                android:importantForAccessibility="no"
-                android:src="@drawable/ic_outline_arrow_forward"
-                app:layout_constraintBottom_toBottomOf="@id/tv_description_mcv_home_random_joke_by_category"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tv_title_mcv_home_random_joke_by_category"
-                app:tint="@color/orange" />
+                <TextView
+                    android:id="@+id/tv_description_mcv_home_random_joke_by_category"
+                    style="@style/Caption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_view_inside_margin"
+                    android:layout_marginBottom="@dimen/card_view_inside_margin"
+                    android:text="@string/random_joke_by_category_description"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/tv_title_mcv_home_random_joke_by_category"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_mcv_home_random_joke_by_category" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:id="@+id/iv_arrow_mcv_home_random_joke_by_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/card_view_inside_margin"
+                    android:layout_marginRight="@dimen/card_view_inside_margin"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_outline_arrow_forward"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_description_mcv_home_random_joke_by_category"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_title_mcv_home_random_joke_by_category"
+                    app:tint="@color/orange" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mcv_home_search_jokes"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="@dimen/default_radius"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mcv_home_random_joke_by_category"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="1dp">
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcv_home_search_jokes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="@dimen/default_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mcv_home_random_joke_by_category"
+            app:strokeColor="@color/orange"
+            app:strokeWidth="1dp">
 
-            <TextView
-                android:id="@+id/tv_title_mcv_home_search_jokes"
-                style="@style/H3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/card_view_inside_margin"
-                android:layout_marginTop="@dimen/card_view_inside_margin"
-                android:layout_marginEnd="8dp"
-                android:text="@string/search_jokes_by_text"
-                app:layout_constraintBottom_toTopOf="@id/tv_title_mcv_home_search_jokes"
-                app:layout_constraintEnd_toStartOf="@id/iv_arrow_mcv_home_search_jokes"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv_description_mcv_home_search_jokes"
-                style="@style/Caption"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/card_view_inside_margin"
-                android:layout_marginBottom="@dimen/card_view_inside_margin"
-                android:text="@string/search_jokes_by_text_description"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/tv_title_mcv_home_search_jokes"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_title_mcv_home_search_jokes" />
+                <TextView
+                    android:id="@+id/tv_title_mcv_home_search_jokes"
+                    style="@style/H3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_view_inside_margin"
+                    android:layout_marginTop="@dimen/card_view_inside_margin"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/search_jokes_by_text"
+                    app:layout_constraintBottom_toTopOf="@id/tv_title_mcv_home_search_jokes"
+                    app:layout_constraintEnd_toStartOf="@id/iv_arrow_mcv_home_search_jokes"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/iv_arrow_mcv_home_search_jokes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/card_view_inside_margin"
-                android:layout_marginRight="@dimen/card_view_inside_margin"
-                android:importantForAccessibility="no"
-                android:src="@drawable/ic_outline_arrow_forward"
-                app:layout_constraintBottom_toBottomOf="@id/tv_description_mcv_home_search_jokes"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tv_title_mcv_home_search_jokes"
-                app:tint="@color/orange" />
+                <TextView
+                    android:id="@+id/tv_description_mcv_home_search_jokes"
+                    style="@style/Caption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_view_inside_margin"
+                    android:layout_marginBottom="@dimen/card_view_inside_margin"
+                    android:text="@string/search_jokes_by_text_description"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/tv_title_mcv_home_search_jokes"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_mcv_home_search_jokes" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:id="@+id/iv_arrow_mcv_home_search_jokes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/card_view_inside_margin"
+                    android:layout_marginRight="@dimen/card_view_inside_margin"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_outline_arrow_forward"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_description_mcv_home_search_jokes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_title_mcv_home_search_jokes"
+                    app:tint="@color/orange" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbt_favorites"
+            style="@style/Button.Material.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Favorites"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mcv_home_search_jokes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

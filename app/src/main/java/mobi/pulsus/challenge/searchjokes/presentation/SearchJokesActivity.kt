@@ -46,7 +46,12 @@ class SearchJokesActivity : AppCompatActivity() {
             is SearchJokeUIState.Success -> {
                 pbSearchJokes.gone
                 tvSearchJokesErrorText.gone
-                jokeAdapter.updateJokeList(state.jokes)
+                jokeAdapter.apply {
+                    updateJokeList(state.jokes)
+                    setFavoriteAction {
+                        viewModel.saveOrDeleteJoke(it)
+                    }
+                }
                 rvSearchJokes.apply {
                     adapter = jokeAdapter
                     visible

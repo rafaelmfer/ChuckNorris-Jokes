@@ -45,4 +45,14 @@ class RandomJokeCategoryViewModel(
             }
         }
     }
+
+    fun saveOrDeleteJoke(joke: JokeModel) {
+        viewModelScope.launch {
+            if (joke.isFavorite) {
+                repository.deleteJoke(joke)
+            } else {
+                repository.insertJoke(joke)
+            }
+        }
+    }
 }

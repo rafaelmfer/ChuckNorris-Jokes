@@ -9,7 +9,6 @@ import mobi.pulsus.challenge.commons.extensions.share
 import mobi.pulsus.challenge.databinding.ItemJokeBinding
 import mobi.pulsus.challenge.domain.model.JokeModel
 
-
 class JokeAdapter : RecyclerView.Adapter<JokeAdapter.JokeViewHolder>() {
 
     private val jokeList: MutableList<JokeModel> = mutableListOf()
@@ -43,14 +42,14 @@ class JokeAdapter : RecyclerView.Adapter<JokeAdapter.JokeViewHolder>() {
 
         fun bind(joke: JokeModel) {
             binding.tvJokeText.text = joke.value
-//            binding.mbtJokeFavorite.isSelected = joke.isFavorite
+            binding.mbtJokeFavorite.isSelected = joke.isFavorite
             binding.mbtJokeFavorite.onSingleClick {
                 favoriteListener.invoke(joke)
-//                it.isSelected = !it.isSelected
+                it.isSelected = !it.isSelected
             }
 
             binding.mbtJokeShare.onSingleClick {
-                it?.context?.share(joke.value, joke.url)
+                it.context.share(joke.value, joke.url)
             }
         }
     }

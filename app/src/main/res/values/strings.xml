@@ -11,4 +11,6 @@
     <string name="load_next">Load Next</string>
     <string name="uncategorized">Uncategorized</string>
     <string name="choose_one_category_from_below">Choose one category from below</string>
+    <string name="favorites">Favorites</string>
+    <string name="no_jokes_saved_here_first_save_one">No jokes saved here, first save one</string>
 </resources>

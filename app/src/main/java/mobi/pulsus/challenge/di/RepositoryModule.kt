@@ -6,6 +6,6 @@ import org.koin.dsl.module
 
 object RepositoryModule {
     val module = module {
-        factory<IChuckNorrisRepository> { ChuckNorrisRepository(get()) }
+        factory<IChuckNorrisRepository> { ChuckNorrisRepository(get(), get()) }
     }
 }
