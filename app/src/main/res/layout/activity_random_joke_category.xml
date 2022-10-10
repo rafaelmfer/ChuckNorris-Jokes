@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    tools:context=".randomjokebycategory.presentation.RandomJokeCategoryActivity">
+    tools:context=".presentation.randomjokebycategory.RandomJokeCategoryActivity">
 
     <mobi.pulsus.challenge.commons.customviews.toolbars.GenericToolbar
         android:id="@+id/gt_random_joke_by_category"

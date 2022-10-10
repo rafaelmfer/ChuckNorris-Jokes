@@ -11,35 +11,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PulsusChallenge">
         <activity
-            android:name=".favorites.presentation.FavoritesActivity"
+            android:name=".presentation.favorites.FavoritesActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".searchjokes.presentation.SearchJokesActivity"
+            android:name=".presentation.searchjokes.SearchJokesActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".randomjokebycategory.presentation.RandomJokeCategoryActivity"
+            android:name=".presentation.randomjokebycategory.RandomJokeCategoryActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".randomjoke.presentation.RandomJokeActivity"
+            android:name=".presentation.randomjoke.RandomJokeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

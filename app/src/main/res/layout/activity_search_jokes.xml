@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".searchjokes.presentation.SearchJokesActivity">
+    tools:context=".presentation.searchjokes.SearchJokesActivity">
 
     <mobi.pulsus.challenge.commons.customviews.toolbars.GenericToolbar
         android:id="@+id/gt_search_jokes"
