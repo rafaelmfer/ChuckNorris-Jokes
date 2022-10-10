@@ -11,7 +11,9 @@ import com.bumptech.glide.request.target.Target
 import mobi.pulsus.challenge.R
 import mobi.pulsus.challenge.commons.extensions.gone
 import mobi.pulsus.challenge.commons.extensions.onSingleClick
+import mobi.pulsus.challenge.commons.extensions.sectionTextBold
 import mobi.pulsus.challenge.commons.extensions.share
+import mobi.pulsus.challenge.commons.extensions.toSpannableStringBuilder
 import mobi.pulsus.challenge.commons.extensions.viewBinding
 import mobi.pulsus.challenge.commons.extensions.visible
 import mobi.pulsus.challenge.databinding.ActivityRandomJokeBinding
@@ -79,9 +81,10 @@ class RandomJokeActivity : AppCompatActivity() {
             .error(R.drawable.ic_image_broken)
             .into(ivRandomJokeImage)
 
-        tvRandomJokeCategory.text = if (joke.categories.isEmpty()) getString(R.string.uncategorized) else joke.categories.joinToString()
-        tvRandomJokeCreation.text = joke.createdAt
-        tvRandomJokeText.text = joke.value
+        tvRandomJokeCategory.text = getString(R.string.category, if (joke.categories.isEmpty()) getString(R.string.uncategorized) else joke.categories.joinToString()).toSpannableStringBuilder()
+            .sectionTextBold(getString(R.string.uncategorized), joke.categories.joinToString())
+        tvRandomJokeCreation.text = getString(R.string.create_at, joke.createdAt).toSpannableStringBuilder().sectionTextBold(joke.createdAt)
+        tvRandomJokeText.text = getString(R.string.joke, joke.value).toSpannableStringBuilder().sectionTextBold(joke.value)
         setupClickShareJoke(joke.value, joke.url)
     }
 
