@@ -14,6 +14,7 @@
     <string name="favorites">Favorites</string>
     <string name="no_jokes_saved_here_first_save_one">No jokes saved here, first save one</string>
     <string name="favorite">favorite</string>
+    <string name="unfavorite">unfavorite</string>
     <string name="share">Share</string>
     <string name="new_joke">new joke</string>
     <string name="image_not_found">Image Not Found</string>

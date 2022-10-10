@@ -86,6 +86,7 @@ class RandomJokeActivity : AppCompatActivity() {
         tvRandomJokeCreation.text = getString(R.string.create_at, joke.createdAt).toSpannableStringBuilder().sectionTextBold(joke.createdAt)
         tvRandomJokeText.text = getString(R.string.joke, joke.value).toSpannableStringBuilder().sectionTextBold(joke.value)
         setupClickShareJoke(joke.value, joke.url)
+        setupClickFavoriteJoke(joke)
     }
 
     private fun ActivityRandomJokeBinding.setupClickNewJoke() {
@@ -98,6 +99,24 @@ class RandomJokeActivity : AppCompatActivity() {
     private fun ActivityRandomJokeBinding.setupClickShareJoke(jokeText: String, url: String) {
         mbtRandomJokeShare.onSingleClick {
             share(jokeText, url)
+        }
+    }
+
+    private fun ActivityRandomJokeBinding.setupClickFavoriteJoke(joke: JokeModel) {
+        mbtRandomJokeFavorite.apply {
+            text = handlerFavoriteText(joke.isFavorite)
+            onSingleClick {
+                text = handlerFavoriteText(!joke.isFavorite)
+                viewModel.saveOrDeleteJoke(joke)
+            }
+        }
+    }
+
+    private fun handlerFavoriteText(isFavorite: Boolean): String {
+        return if (isFavorite) {
+            getString(R.string.unfavorite)
+        } else {
+            getString(R.string.favorite)
         }
     }
 }

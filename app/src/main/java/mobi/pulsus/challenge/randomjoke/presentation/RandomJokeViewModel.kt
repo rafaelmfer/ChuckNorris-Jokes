@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import mobi.pulsus.challenge.domain.model.JokeModel
 import mobi.pulsus.challenge.domain.repository.IChuckNorrisRepository
 
 class RandomJokeViewModel(
@@ -26,6 +27,16 @@ class RandomJokeViewModel(
                 randomJokeMutableLiveData.postValue(RandomJokeUIState.Success(result))
             } catch (e: Exception) {
                 randomJokeMutableLiveData.postValue(RandomJokeUIState.Error)
+            }
+        }
+    }
+
+    fun saveOrDeleteJoke(joke: JokeModel) {
+        viewModelScope.launch {
+            if (joke.isFavorite) {
+                repository.deleteJoke(joke)
+            } else {
+                repository.saveJoke(joke)
             }
         }
     }
