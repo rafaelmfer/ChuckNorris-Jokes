@@ -1,5 +1,6 @@
 package mobi.pulsus.challenge.di
 
+import mobi.pulsus.challenge.favorites.presentation.FavoritesViewModel
 import mobi.pulsus.challenge.randomjoke.presentation.RandomJokeViewModel
 import mobi.pulsus.challenge.randomjokebycategory.presentation.RandomJokeCategoryViewModel
 import mobi.pulsus.challenge.searchjokes.presentation.SearchJokesViewModel
@@ -11,5 +12,6 @@ object PresentationModule {
         viewModel { RandomJokeViewModel(get()) }
         viewModel { RandomJokeCategoryViewModel(get()) }
         viewModel { SearchJokesViewModel(get()) }
+        viewModel { FavoritesViewModel(get()) }
     }
 }
