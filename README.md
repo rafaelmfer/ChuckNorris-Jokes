@@ -1,5 +1,5 @@
 # Aplicativo Chuck Norris' Jokes 
-### Desafio Mobile da Pulsus
+## Mobile Challenge from Pulsus
 
 Study application made to take advantage of the best programming practices using chuck norris'
 public api. Shows a chuck norris' random joke, random joke by category, or you can search for a joke
@@ -113,7 +113,6 @@ using a keyword.
 <table>
     <th>RandomJokeViewModelTest</th>
     <th>RandomJokeCategoryViewModelTest</th>
-    <th>SearchJokesViewModelTest</th>
     <tr>
         <td>
             <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/RandomJokeViewModelTest.png"/>
@@ -121,14 +120,15 @@ using a keyword.
         <td>
             <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/RandomJokeCategoryViewModelTest%20.png"/>
         </td>
-        <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/SearchJokesViewModelTest.png"/>
-        </td>
     </tr>
 </table>
 <table>
+    <th>SearchJokesViewModelTest</th>
     <th>FavoritesViewModelTest</th>
     <tr>
+        <td>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/SearchJokesViewModelTest.png"/>
+        </td>
         <td>
             <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/FavoritesViewModelTest.png"/>
         </td>
@@ -141,7 +141,7 @@ using a keyword.
     <th>JokeDaoTest</th>
     <tr>
         <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/JokeDaoTest.png"/>
         </td>
     </tr>
 </table>
