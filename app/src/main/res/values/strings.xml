@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">Pulsus Challenge</string>
+    <string name="random_joke">Random Joke</string>
+    <string name="random_joke_description">Retrieve a random chuck norris\' joke</string>
+    <string name="random_joke_by_one_category">Random Joke by one category</string>
+    <string name="random_joke_by_category_description">Retrieve a random chuck norris\' joke from a given category.</string>
+    <string name="search_jokes_by_text">Search Jokes by text</string>
+    <string name="search_jokes_by_text_description">Retrieve a list of chuck norris\' jokes from a given text.</string>
+    <string name="day_night">Day/Night</string>
+    <string name="search_keyword">Search keyword</string>
+    <string name="an_error_occurred_try_again_later">An error occurred. Try again later</string>
+    <string name="load_next">Load Next</string>
+    <string name="uncategorized">Uncategorized</string>
+    <string name="choose_one_category_from_below">Choose one category from below</string>
+    <string name="favorites">Favorites</string>
+    <string name="no_jokes_saved_here_first_save_one">No jokes saved here, first save one</string>
+    <string name="favorite">favorite</string>
+    <string name="unfavorite">unfavorite</string>
+    <string name="share">Share</string>
+    <string name="new_joke">new joke</string>
+    <string name="image_not_found">Image Not Found</string>
+    <string name="category">Category: %1$s</string>
+    <string name="create_at">Created at: %1$s</string>
+    <string name="joke">Joke: %1$s</string>
 </resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Chuck Norris\' Jokes</string>
+
+    <!-- GenericToolbar -->
+    <string name="generic_toolbar_back_button_acs">Voltar</string>
+    <string name="generic_toolbar_title_acs">%1$s</string>
+    <string name="generic_toolbar_close_button_acs">Fechar</string>
+</resources>

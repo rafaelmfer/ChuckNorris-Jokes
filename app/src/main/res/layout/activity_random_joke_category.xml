@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".presentation.randomjokebycategory.RandomJokeCategoryActivity">
+
+    <mobi.pulsus.challenge.commons.customviews.toolbars.GenericToolbar
+        android:id="@+id/gt_random_joke_by_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:buttonLeftTextColor="@color/orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showLeftButton="true"
+        app:showRightButton="false"
+        app:toolbarText="@string/random_joke_by_one_category"
+        app:toolbarTextColor="@color/orange" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gt_random_joke_by_category"
+        app:layout_constraintVertical_bias="0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_random_joke_by_category_instructions"
+                style="@style/H1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin_horizontal"
+                android:layout_marginEnd="@dimen/screen_margin_horizontal"
+                android:gravity="center"
+                android:text="@string/choose_one_category_from_below"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/rv_fact_categories"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_detail_fact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin_horizontal"
+                android:layout_marginTop="@dimen/screen_margin_vertical"
+                android:layout_marginEnd="@dimen/screen_margin_horizontal"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/default_radius"
+                app:cardElevation="8dp"
+                app:layout_constraintBottom_toTopOf="@id/rv_fact_categories"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/orange"
+                app:strokeWidth="1dp"
+                tools:visibility="visible">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_mcv_detail_fact_category_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/card_view_inside_margin"
+                        android:layout_marginLeft="@dimen/card_view_inside_margin"
+                        android:layout_marginTop="@dimen/card_view_inside_margin"
+                        android:padding="2dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Dev fact:" />
+
+                    <TextView
+                        android:id="@+id/tv_mcv_detail_fact_content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/card_view_inside_margin"
+                        android:layout_marginLeft="@dimen/card_view_inside_margin"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginRight="4dp"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textStyle="italic"
+                        app:layout_constraintEnd_toStartOf="@id/mbt_mcv_detail_fact_favorite"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_mcv_detail_fact_category_name"
+                        tools:text="Chuck Norris once had a heckler call him Chuckie. Chuck kicked him so hard he was arrested for speeding 2 blocks away." />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/mbt_mcv_detail_fact_favorite"
+                        style="@style/Button.IconOnly"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:icon="@drawable/selector_favorite"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/mbt_mcv_detail_fact_share"
+                        style="@style/Button.IconOnly"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:icon="@drawable/ic_outline_share"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mbt_mcv_detail_fact_favorite"
+                        app:layout_constraintVertical_bias="1" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/mbt_mcv_detail_fact_load_next_fact"
+                        style="@style/Button.Material.Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/load_next"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_mcv_detail_fact_content" />
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/factGroup"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:visibility="gone"
+                        app:constraint_referenced_ids="tv_mcv_detail_fact_category_name, tv_mcv_detail_fact_content,
+                mbt_mcv_detail_fact_load_next_fact, mbt_mcv_detail_fact_favorite, mbt_mcv_detail_fact_share"
+                        tools:visibility="visible" />
+
+                    <ProgressBar
+                        android:id="@+id/pb_mcv_detail_fact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:indeterminateTint="@color/orange"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:visibility="gone" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_fact_categories"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:spanCount="2"
+                tools:listitem="@layout/item_category" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/pb_random_joke_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/orange"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_random_joke_category_error_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin_horizontal"
+        android:layout_marginEnd="@dimen/screen_margin_horizontal"
+        android:gravity="center"
+        android:text="@string/an_error_occurred_try_again_later"
+        android:textColor="@color/orange"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gt_random_joke_by_category"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.randomjoke.RandomJokeActivity">
+
+    <mobi.pulsus.challenge.commons.customviews.toolbars.GenericToolbar
+        android:id="@+id/gt_random_joke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:buttonLeftTextColor="@color/orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showLeftButton="true"
+        app:showRightButton="false"
+        app:toolbarText="@string/random_joke"
+        app:toolbarTextColor="@color/orange" />
+
+    <ScrollView
+        android:id="@+id/sv_random_joke"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gt_random_joke">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_random_joke_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="32dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_image_loading"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_random_joke_image_error_message"
+                style="@style/Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:importantForAccessibility="no"
+                android:text="@string/image_not_found"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/iv_random_joke_image"
+                app:layout_constraintStart_toStartOf="@id/iv_random_joke_image"
+                app:layout_constraintTop_toBottomOf="@id/iv_random_joke_image"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_random_joke_texts_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="tv_random_joke_category, tv_random_joke_creation,
+                tv_random_joke_text, mbt_random_joke_new_joke, mbt_random_joke_share, mbt_random_joke_favorite" />
+
+            <TextView
+                android:id="@+id/tv_random_joke_category"
+                style="@style/Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin_horizontal"
+                android:layout_marginLeft="@dimen/screen_margin_horizontal"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_random_joke_image_error_message"
+                tools:text="Category: Dev" />
+
+            <TextView
+                android:id="@+id/tv_random_joke_creation"
+                style="@style/Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin_horizontal"
+                android:layout_marginLeft="@dimen/screen_margin_horizontal"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_random_joke_category"
+                tools:text="Created at: 12/12/2022" />
+
+            <TextView
+                android:id="@+id/tv_random_joke_text"
+                style="@style/Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin_horizontal"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/screen_margin_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_random_joke_creation"
+                tools:text="@tools:sample/avatars" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbt_random_joke_new_joke"
+                style="@style/Button.Material.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin_horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="@dimen/screen_margin_horizontal"
+                android:layout_marginBottom="8dp"
+                android:text="@string/new_joke"
+                app:layout_constraintBottom_toTopOf="@id/mbt_random_joke_share"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_random_joke_text"
+                app:layout_constraintVertical_bias="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbt_random_joke_share"
+                style="@style/Button.Material.Text.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin_horizontal"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/share"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/mbt_random_joke_favorite"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbt_random_joke_favorite"
+                style="@style/Button.Material.Text.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="@dimen/screen_margin_horizontal"
+                android:layout_marginBottom="24dp"
+                android:text="@string/favorite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/mbt_random_joke_share" />
+
+            <ProgressBar
+                android:id="@+id/pb_random_joke_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/orange"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_random_joke_image_error_message"
+                app:layout_constraintVertical_bias="0.15" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_random_joke_category_error_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin_horizontal"
+        android:layout_marginEnd="@dimen/screen_margin_horizontal"
+        android:gravity="center"
+        android:text="@string/an_error_occurred_try_again_later"
+        android:textColor="@color/orange"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gt_random_joke"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
