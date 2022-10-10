@@ -45,11 +45,11 @@ class JokeAdapter : RecyclerView.Adapter<JokeAdapter.JokeViewHolder>() {
             binding.mbtJokeFavorite.isSelected = joke.isFavorite
             binding.mbtJokeFavorite.onSingleClick {
                 favoriteListener.invoke(joke)
-                it?.isSelected = !it?.isSelected!!
+                it.isSelected = !it.isSelected
             }
 
             binding.mbtJokeShare.onSingleClick {
-                it?.context?.share(joke.value, joke.url)
+                it.context.share(joke.value, joke.url)
             }
         }
     }

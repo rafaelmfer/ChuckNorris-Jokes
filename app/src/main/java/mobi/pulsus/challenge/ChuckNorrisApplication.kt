@@ -1,6 +1,7 @@
 package mobi.pulsus.challenge
 
 import android.app.Application
+import mobi.pulsus.challenge.di.DatabaseModule
 import mobi.pulsus.challenge.di.NetworkModule
 import mobi.pulsus.challenge.di.PresentationModule
 import mobi.pulsus.challenge.di.RepositoryModule
@@ -16,6 +17,7 @@ class ChuckNorrisApplication : Application() {
             androidContext(this@ChuckNorrisApplication)
             modules(
                 PresentationModule.module,
+                DatabaseModule.module,
                 RepositoryModule.module,
                 NetworkModule.module,
             )

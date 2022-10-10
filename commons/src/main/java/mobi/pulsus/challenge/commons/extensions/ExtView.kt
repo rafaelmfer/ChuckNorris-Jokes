@@ -15,7 +15,7 @@ import kotlin.coroutines.CoroutineContext
 fun View.onSingleClick(
     delayTime: Long = 1000L,
     context: CoroutineContext = Dispatchers.Main,
-    handler: suspend CoroutineScope.(v: View?) -> Unit
+    handler: suspend CoroutineScope.(v: View) -> Unit
 ) {
     var lastClickTime = 0L
 
