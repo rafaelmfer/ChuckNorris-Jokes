@@ -32,7 +32,7 @@ class SearchJokesViewModel(
             if (joke.isFavorite) {
                 repository.deleteJoke(joke)
             } else {
-                repository.insertJoke(joke)
+                repository.saveJoke(joke)
             }
         }
     }

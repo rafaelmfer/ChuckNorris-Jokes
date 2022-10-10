@@ -10,6 +10,6 @@ interface IChuckNorrisRepository {
     suspend fun getJokesFromAKeyword(keyword: String): SearchJokeModel
     suspend fun getAllSavedJokes(): List<JokeModel>
     suspend fun getJokeById(id: String): JokeModel?
-    suspend fun insertJoke(jokeModel: JokeModel)
+    suspend fun saveJoke(jokeModel: JokeModel)
     suspend fun deleteJoke(jokeModel: JokeModel)
 }

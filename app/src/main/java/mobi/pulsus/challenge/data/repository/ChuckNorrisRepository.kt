@@ -102,7 +102,7 @@ class ChuckNorrisRepository(
         }
     }
 
-    override suspend fun insertJoke(jokeModel: JokeModel) {
+    override suspend fun saveJoke(jokeModel: JokeModel) {
         withContext(ioDispatcher) {
             jokeModel.isFavorite = true
             jokeDao.saveJoke(jokeModel.modelToDTO())

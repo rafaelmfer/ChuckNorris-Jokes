@@ -8,6 +8,7 @@ import mobi.pulsus.challenge.domain.repository.IChuckNorrisRepository
 class FakeChuckNorrisRepository : IChuckNorrisRepository {
 
     companion object {
+        val listOfJoke = mutableListOf<JokeModel>()
         val jokeTest = JokeModel(
             categories = listOf(),
             createdAt = "20/10/2222",
@@ -37,6 +38,7 @@ class FakeChuckNorrisRepository : IChuckNorrisRepository {
             total = 0,
             result = listOf()
         )
+        const val JOKE_NOT_FOUND = "Joke not found"
     }
 
     private var shouldReturnError = false
@@ -83,5 +85,29 @@ class FakeChuckNorrisRepository : IChuckNorrisRepository {
         } else {
             emptySearch
         }
+    }
+
+    override suspend fun getAllSavedJokes(): List<JokeModel> {
+        if (shouldReturnError) {
+            listOfJoke.clear()
+            return listOfJoke
+        }
+        return listOfJoke
+    }
+
+    override suspend fun getJokeById(id: String): JokeModel? {
+        if (shouldReturnError) {
+            return null
+        }
+
+        return if (jokeTest.id == id) jokeTest else null
+    }
+
+    override suspend fun saveJoke(jokeModel: JokeModel) {
+        listOfJoke.add(jokeModel)
+    }
+
+    override suspend fun deleteJoke(jokeModel: JokeModel) {
+        listOfJoke.remove(jokeModel)
     }
 }
