@@ -189,3 +189,5 @@ https://github.com/material-components
 
 - RecyclerView
 - MaterialButton
+- TextInputLayout
+- TextInputEditText
