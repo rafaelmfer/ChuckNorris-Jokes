@@ -43,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/screen_margin_horizontal"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="48dp"
             android:layout_marginEnd="@dimen/screen_margin_horizontal"
             app:cardCornerRadius="@dimen/default_radius"
             app:layout_constraintEnd_toEndOf="parent"
@@ -229,11 +229,24 @@
             style="@style/Button.Material.Primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Favorites"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="16dp"
+            android:text="@string/favorites"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mcv_home_search_jokes" />
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="-32dp"
+            android:layout_marginBottom="@dimen/screen_margin_vertical"
+            android:adjustViewBounds="true"
+            android:importantForAccessibility="no"
+            android:src="@drawable/chuck_norris_thumbs_up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mbt_favorites" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
