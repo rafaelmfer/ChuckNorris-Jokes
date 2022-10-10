@@ -1,12 +1,11 @@
-# Aplicativo Chuck Norris' Jokes - ## Desafio Mobile da Pulsus
+# Aplicativo Chuck Norris' Jokes 
+### Desafio Mobile da Pulsus
 
 Study application made to take advantage of the best programming practices using chuck norris'
 public api. Shows a chuck norris' random joke, random joke by category, or you can search for a joke
 using a keyword.
 
-[APK](https://github.com/rafaelmfer/ChuckNorris-Jokes)
-|| [VIDEO](https://github.com/rafaelmfer/ChuckNorris-Jokes)
-|| [YOUTUBE](https://github.com/rafaelmfer/ChuckNorris-Jokes)
+[APK](https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/apk/app-debug.apk?raw=true) || [VIDEO](https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/screen_recording_app.mp4?raw=true)
 
 <table>
     <thead>
@@ -47,19 +46,19 @@ using a keyword.
     <th>Favorites Light</th>
     <tr>
         <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/Home%20Light.png"/>
         </td>
         <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/Random%20Joke%20Light.png"/>
         </td>
         <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/Random%20Joke%20By%20Category%20Light.png"/>
         </td>
         <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/Search%20Jokes%20Light.png"/>
         </td>
         <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/Favorites%20Light.png"/>
         </td>
     </tr>
 </table>
@@ -72,19 +71,19 @@ using a keyword.
     <th>Favorites Dark</th>
     <tr>
         <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/Home%20Dark.png"/>
         </td>
         <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/Random%20Joke%20Dark.png"/>
         </td>
         <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/Random%20Joke%20By%20Category%20Dark.png"/>
         </td>
         <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/Search%20Jokes%20Dark.png"/>
         </td>
         <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/Favorites%20Dark.png"/>
         </td>
     </tr>
 </table>
@@ -100,39 +99,44 @@ using a keyword.
   application. Simplifies code by abstracting all the complexity of using threads
 
 - **Room:**
-  Room Database is one of the existing libraries within the “Android JetPack” suite, it helps developers
-  creating an abstraction of database layers (SQLite) to store information.
+  Room Database is one of the existing libraries within the “Android JetPack” suite, it helps
+  developers creating an abstraction of database layers (SQLite) to store information.
 
 - **Kotlin KTS:**
   Using Kotlin KTS we can take advantage of the application configuration using the kotlin language
   in our gradle file. This makes our configuration even easier
 
-
 ## Tests
 
-- **Unit Tests**: RandomJokeViewModelTest, RandomJokeCategoryViewModelTest, SearchJokesViewModelTest, FavoritesViewModelTest
+- **Unit Tests**:
+
 <table>
     <th>RandomJokeViewModelTest</th>
     <th>RandomJokeCategoryViewModelTest</th>
     <th>SearchJokesViewModelTest</th>
+    <tr>
+        <td>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/RandomJokeViewModelTest.png"/>
+        </td>
+        <td>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/RandomJokeCategoryViewModelTest%20.png"/>
+        </td>
+        <td>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/SearchJokesViewModelTest.png"/>
+        </td>
+    </tr>
+</table>
+<table>
     <th>FavoritesViewModelTest</th>
     <tr>
         <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
-        </td>
-        <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
-        </td>
-        <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
-        </td>
-        <td>
-            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes"/>
+            <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/FavoritesViewModelTest.png"/>
         </td>
     </tr>
 </table>
 
 - **Instrumented Tests**:
+
 <table>
     <th>JokeDaoTest</th>
     <tr>
@@ -141,7 +145,6 @@ using a keyword.
         </td>
     </tr>
 </table>
-
 
 ## Quick start
 
