@@ -16,7 +16,7 @@ interface IChuckNorrisApi {
 
     @GET("random")
     suspend fun getRandomJokeFromCategory(
-        @Query("category") category: String = ""
+        @Query("category") category: String
     ): Response<JokeResponse>
 
     @GET("search")

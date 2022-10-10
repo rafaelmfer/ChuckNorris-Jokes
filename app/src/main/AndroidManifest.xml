@@ -11,21 +11,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PulsusChallenge">
         <activity
-            android:name=".searchjokes.ui.SearchJokesActivity"
+            android:name=".searchjokes.presentation.SearchJokesActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".randomjokebycategory.ui.RandomJokeCategoryActivity"
+            android:name=".randomjokebycategory.presentation.RandomJokeCategoryActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".randomjoke.ui.RandomJokeActivity"
+            android:name=".randomjoke.presentation.RandomJokeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

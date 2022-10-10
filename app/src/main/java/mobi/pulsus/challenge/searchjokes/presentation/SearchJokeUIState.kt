@@ -1,4 +1,4 @@
-package mobi.pulsus.challenge.searchjokes.ui
+package mobi.pulsus.challenge.searchjokes.presentation
 
 import mobi.pulsus.challenge.domain.model.JokeModel
 

@@ -1,4 +1,4 @@
-package mobi.pulsus.challenge.randomjokebycategory.ui
+package mobi.pulsus.challenge.randomjokebycategory.presentation
 
 import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData

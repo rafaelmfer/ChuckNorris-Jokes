@@ -7,19 +7,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import kotlin.reflect.KClass
 
-private const val TIMEOUT_30 = 30
+private const val TIMEOUT_30 = 30L
 private const val BASE_URL_CHUCK = "https://api.chucknorris.io/jokes/"
 
 class HTTPClient {
 
     private val httpLoggingInterceptor = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.BODY
+        level = HttpLoggingInterceptor.Level.NONE
     }
 
     private val httpClient = OkHttpClient.Builder()
-        .readTimeout(TIMEOUT_30.toLong(), TimeUnit.SECONDS)
-        .connectTimeout(TIMEOUT_30.toLong(), TimeUnit.SECONDS)
-        .writeTimeout(TIMEOUT_30.toLong(), TimeUnit.SECONDS)
+        .readTimeout(TIMEOUT_30, TimeUnit.SECONDS)
+        .connectTimeout(TIMEOUT_30, TimeUnit.SECONDS)
+        .writeTimeout(TIMEOUT_30, TimeUnit.SECONDS)
         .addInterceptor(httpLoggingInterceptor)
         .build()
 

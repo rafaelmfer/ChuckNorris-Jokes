@@ -1,4 +1,4 @@
-package mobi.pulsus.challenge.searchjokes.ui
+package mobi.pulsus.challenge.randomjoke.presentation
 
 import android.os.Build
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -8,6 +8,7 @@ import kotlinx.coroutines.test.resumeDispatcher
 import kotlinx.coroutines.test.runBlockingTest
 import mobi.pulsus.challenge.MainCoroutineRule
 import mobi.pulsus.challenge.data.FakeChuckNorrisRepository
+import mobi.pulsus.challenge.domain.model.JokeModel
 import mobi.pulsus.challenge.getOrAwaitValue
 import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers.`is`
@@ -22,7 +23,7 @@ import org.robolectric.annotation.Config
 @RunWith(AndroidJUnit4::class)
 @ExperimentalCoroutinesApi
 @Config(sdk = [Build.VERSION_CODES.O_MR1])
-class SearchJokesViewModelTest {
+class RandomJokeViewModelTest {
 
     @get:Rule
     var mainCoroutineRule = MainCoroutineRule()
@@ -30,12 +31,12 @@ class SearchJokesViewModelTest {
     private lateinit var chuckNorrisRepository: FakeChuckNorrisRepository
 
     // Class under test
-    private lateinit var searchJokesViewModel: SearchJokesViewModel
+    private lateinit var randomJokeViewModel: RandomJokeViewModel
 
     @Before
     fun setUp() {
         chuckNorrisRepository = FakeChuckNorrisRepository()
-        searchJokesViewModel = SearchJokesViewModel(chuckNorrisRepository)
+        randomJokeViewModel = RandomJokeViewModel(chuckNorrisRepository)
     }
 
     @After
@@ -44,42 +45,43 @@ class SearchJokesViewModelTest {
     }
 
     @Test
-    fun `get Jokes by a common keyword _ show search with 3 results`() {
+    fun `get Random Joke _ check if the joke is not empty`() {
         mainCoroutineRule.runBlockingTest {
             //GIVEN
-            val keyword = "dev"
+            val joke = JokeModel(
+                categories = listOf(),
+                createdAt = "20/10/2222",
+                iconUrl = "test",
+                id = "test_id",
+                url = "test.com",
+                value = "This is a test joke"
+            )
 
             //WHEN
             mainCoroutineRule.pauseDispatcher()
-            searchJokesViewModel.getJokes(keyword)
+            randomJokeViewModel.getRandomJoke()
 
             //THEN
-            MatcherAssert.assertThat(searchJokesViewModel.searchJokesLiveData.getOrAwaitValue(), `is`(SearchJokeUIState.Loading))
+            MatcherAssert.assertThat(randomJokeViewModel.randomJokeLiveData.getOrAwaitValue(), `is`(RandomJokeUIState.Loading))
             mainCoroutineRule.resumeDispatcher()
-            MatcherAssert.assertThat(
-                (searchJokesViewModel.searchJokesLiveData.value as SearchJokeUIState.Success).jokes,
-                `is`(FakeChuckNorrisRepository.searchJokeTest.result)
-            )
+            MatcherAssert.assertThat((randomJokeViewModel.randomJokeLiveData.value as RandomJokeUIState.Success).joke, `is`(joke))
         }
     }
 
     @Test
-    fun `search Jokes by less than 3 letters keyword _ show empty search`() {
+    fun `get Random Joke _ show error`() {
         mainCoroutineRule.runBlockingTest {
             //GIVEN
-            val keyword = "al"
+            chuckNorrisRepository.shouldReturnError(true)
 
             //WHEN
             mainCoroutineRule.pauseDispatcher()
-            searchJokesViewModel.getJokes(keyword)
+            randomJokeViewModel.getRandomJoke()
 
             //THEN
-            MatcherAssert.assertThat(searchJokesViewModel.searchJokesLiveData.getOrAwaitValue(), `is`(SearchJokeUIState.Loading))
+            MatcherAssert.assertThat(randomJokeViewModel.randomJokeLiveData.getOrAwaitValue(), `is`(RandomJokeUIState.Loading))
             mainCoroutineRule.resumeDispatcher()
-            MatcherAssert.assertThat(
-                (searchJokesViewModel.searchJokesLiveData.value as SearchJokeUIState.Success).jokes,
-                `is`(FakeChuckNorrisRepository.emptySearch.result)
-            )
+            MatcherAssert.assertThat((randomJokeViewModel.randomJokeLiveData.value as RandomJokeUIState.Error), `is`(RandomJokeUIState.Error))
         }
     }
 }

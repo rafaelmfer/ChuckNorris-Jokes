@@ -39,7 +39,7 @@
                 android:textSize="18sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/mbt_joke_favorite"
+                app:layout_constraintEnd_toStartOf="@id/mbt_joke_favorite"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Chuck Norris has six assholes. And even he will need them all to shit enough corn &amp; peanuts infused feces on the U.S. House of Representatives." />

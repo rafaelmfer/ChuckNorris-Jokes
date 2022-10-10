@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".randomjoke.ui.RandomJokeActivity">
+    tools:context=".randomjoke.presentation.RandomJokeActivity">
 
     <mobi.pulsus.challenge.commons.customviews.toolbars.GenericToolbar
         android:id="@+id/gt_random_joke"
@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:constraint_referenced_ids="tv_random_joke_category, tv_random_joke_creation,
-                tv_random_joke_text, mbt_random_joke_new_joke, mbt_random_joke_share"/>
+                tv_random_joke_text, mbt_random_joke_new_joke, mbt_random_joke_share" />
 
             <TextView
                 android:id="@+id/tv_random_joke_category"

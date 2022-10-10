@@ -1,4 +1,4 @@
-package mobi.pulsus.challenge.searchjokes.ui
+package mobi.pulsus.challenge.searchjokes.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

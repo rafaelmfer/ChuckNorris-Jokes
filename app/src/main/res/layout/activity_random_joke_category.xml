@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    tools:context=".randomjokebycategory.ui.RandomJokeCategoryActivity">
+    tools:context=".randomjokebycategory.presentation.RandomJokeCategoryActivity">
 
     <mobi.pulsus.challenge.commons.customviews.toolbars.GenericToolbar
         android:id="@+id/gt_random_joke_by_category"
@@ -42,7 +42,7 @@
                 android:layout_marginStart="@dimen/screen_margin_horizontal"
                 android:layout_marginEnd="@dimen/screen_margin_horizontal"
                 android:gravity="center"
-                android:text="Choose one category from below"
+                android:text="@string/choose_one_category_from_below"
                 android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@id/rv_fact_categories"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -79,6 +79,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/card_view_inside_margin"
                         android:layout_marginLeft="@dimen/card_view_inside_margin"
+                        android:padding="2dp"
                         android:layout_marginTop="@dimen/card_view_inside_margin"
                         android:textSize="18sp"
                         android:textStyle="bold|italic"
@@ -98,9 +99,9 @@
                         android:gravity="center"
                         android:textSize="18sp"
                         android:textStyle="italic"
-                        app:layout_constraintEnd_toStartOf="@+id/mbt_mcv_detail_fact_favorite"
+                        app:layout_constraintEnd_toStartOf="@id/mbt_mcv_detail_fact_favorite"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_mcv_detail_fact_category_name"
+                        app:layout_constraintTop_toBottomOf="@id/tv_mcv_detail_fact_category_name"
                         tools:text="Chuck Norris once had a heckler call him Chuckie. Chuck kicked him so hard he was arrested for speeding 2 blocks away." />
 
                     <com.google.android.material.button.MaterialButton
@@ -131,7 +132,7 @@
                         android:text="@string/load_next"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_mcv_detail_fact_content" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_mcv_detail_fact_content" />
 
                     <androidx.constraintlayout.widget.Group
                         android:id="@+id/factGroup"

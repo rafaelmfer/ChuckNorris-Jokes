@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".searchjokes.ui.SearchJokesActivity">
+    tools:context=".searchjokes.presentation.SearchJokesActivity">
 
     <mobi.pulsus.challenge.commons.customviews.toolbars.GenericToolbar
         android:id="@+id/gt_search_jokes"
@@ -116,6 +116,7 @@
         android:text="@string/an_error_occurred_try_again_later"
         android:textColor="@color/orange"
         android:textSize="24sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

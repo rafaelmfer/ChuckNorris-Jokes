@@ -1,4 +1,4 @@
-package mobi.pulsus.challenge.randomjokebycategory.ui
+package mobi.pulsus.challenge.randomjokebycategory.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +22,6 @@ class RandomJokeCategoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.onViewCreated()
-        binding.gtRandomJokeByCategory.setLeftButtonText("<--")
     }
 
     private fun ActivityRandomJokeCategoryBinding.onViewCreated() {

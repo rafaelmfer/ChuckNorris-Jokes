@@ -1,4 +1,4 @@
-package mobi.pulsus.challenge.searchjokes.ui
+package mobi.pulsus.challenge.searchjokes.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +21,6 @@ class SearchJokesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.onViewCreated()
-        binding.gtSearchJokes.setLeftButtonText("<--")
     }
 
     private fun ActivitySearchJokesBinding.onViewCreated() {
@@ -41,7 +40,6 @@ class SearchJokesActivity : AppCompatActivity() {
         when (state) {
             is SearchJokeUIState.Loading -> {
                 pbSearchJokes.visible
-                groupSearchJokesStartInstructions.gone
                 rvSearchJokes.gone
                 tvSearchJokesErrorText.gone
             }
@@ -49,7 +47,6 @@ class SearchJokesActivity : AppCompatActivity() {
                 pbSearchJokes.gone
                 tvSearchJokesErrorText.gone
                 jokeAdapter.updateJokeList(state.jokes)
-                groupSearchJokesStartInstructions.gone
                 rvSearchJokes.apply {
                     adapter = jokeAdapter
                     visible
@@ -58,10 +55,10 @@ class SearchJokesActivity : AppCompatActivity() {
             is SearchJokeUIState.Error -> {
                 pbSearchJokes.gone
                 rvSearchJokes.gone
-                groupSearchJokesStartInstructions.gone
                 tvSearchJokesErrorText.visible
             }
         }
+        groupSearchJokesStartInstructions.gone
     }
 
     private fun ActivitySearchJokesBinding.setupSearchBox() {

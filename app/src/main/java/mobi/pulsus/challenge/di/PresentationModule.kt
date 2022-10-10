@@ -1,8 +1,8 @@
 package mobi.pulsus.challenge.di
 
-import mobi.pulsus.challenge.randomjoke.ui.RandomJokeViewModel
-import mobi.pulsus.challenge.randomjokebycategory.ui.RandomJokeCategoryViewModel
-import mobi.pulsus.challenge.searchjokes.ui.SearchJokesViewModel
+import mobi.pulsus.challenge.randomjoke.presentation.RandomJokeViewModel
+import mobi.pulsus.challenge.randomjokebycategory.presentation.RandomJokeCategoryViewModel
+import mobi.pulsus.challenge.searchjokes.presentation.SearchJokesViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

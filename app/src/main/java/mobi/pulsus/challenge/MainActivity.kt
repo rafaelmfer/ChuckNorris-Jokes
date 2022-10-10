@@ -8,9 +8,9 @@ import androidx.appcompat.app.AppCompatDelegate
 import mobi.pulsus.challenge.commons.extensions.onSingleClick
 import mobi.pulsus.challenge.commons.extensions.viewBinding
 import mobi.pulsus.challenge.databinding.ActivityMainBinding
-import mobi.pulsus.challenge.randomjoke.ui.RandomJokeActivity
-import mobi.pulsus.challenge.randomjokebycategory.ui.RandomJokeCategoryActivity
-import mobi.pulsus.challenge.searchjokes.ui.SearchJokesActivity
+import mobi.pulsus.challenge.randomjoke.presentation.RandomJokeActivity
+import mobi.pulsus.challenge.randomjokebycategory.presentation.RandomJokeCategoryActivity
+import mobi.pulsus.challenge.searchjokes.presentation.SearchJokesActivity
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package mobi.pulsus.challenge.randomjokebycategory.ui
+package mobi.pulsus.challenge.randomjokebycategory.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

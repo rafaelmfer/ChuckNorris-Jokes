@@ -1,4 +1,4 @@
-package mobi.pulsus.challenge.searchjokes.ui
+package mobi.pulsus.challenge.searchjokes.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
