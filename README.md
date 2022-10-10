@@ -139,9 +139,13 @@ using a keyword.
 
 <table>
     <th>JokeDaoTest</th>
+    <th>RandomJokeActivityTest - Soon</th>
     <tr>
         <td>
             <img src="https://github.com/rafaelmfer/ChuckNorris-Jokes/blob/main/github_assets/JokeDaoTest.png"/>
+        </td>
+        <td>
+            **Soon** (Pt-br - Em breve)
         </td>
     </tr>
 </table>
